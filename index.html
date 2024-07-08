@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Idade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="bg-neutral-950 text-neutral-200 min-h-svh relative">
+    <main>
+      <section
+        class="calculator-container bg-neutral-900 p-4 w-[90%] min-w-[320px] max-w-[500px] flex flex-col gap-y-5 rounded-lg absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border border-neutral-500"
+      >
+        <h1 class="text-2xl text-center font-bold">Calculadora de Idade</h1>
+        <form class="flex flex-col gap-y-5">
+          <div class="flex flex-col gap-y-1">
+            <label for="birthday">Data de nascimento</label>
+            <input
+              type="date"
+              id="birthday"
+              class="bg-inherit border p-2 rounded-md"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="bg-neutral-300 p-2 rounded-md text-neutral-900 hover:bg-neutral-400 hover:text-neutral-800"
+          >
+            Calcular
+          </button>
+        </form>
+      </section>
+      <section
+        class="bg-neutral-900 p-4 w-50 flex flex-col gap-y-5 rounded-lg absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border border-neutral-500 box hidden"
+      >
+        <p class="text-center">
+          Sua idade é <span class="age font-bold"></span>
+        </p>
+        <button
+          class="ok-button bg-neutral-300 p-2 rounded-md text-neutral-900 hover:bg-neutral-400 hover:text-neutral-800"
+        >
+          <span class="uppercase">Ok</span>
+        </button>
+      </section>
+    </main>
+  </body>
+</html>

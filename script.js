@@ -1,5 +1,4 @@
 const form = document.querySelector("form");
-const okButton = document.querySelector(".ok-button");
 
 const calculateAge = (birthday) => {
   let age = 0;
@@ -26,44 +25,10 @@ const calculateAge = (birthday) => {
   return age;
 };
 
-const disableAll = (element) => {
-  const inputs = element.querySelectorAll("input");
-  const buttons = element.querySelectorAll("button");
-
-  inputs.forEach((input) => {
-    input.disabled = true;
-  });
-
-  buttons.forEach((button) => {
-    button.classList.add("cursor-not-allowed");
-  });
-};
-
-const enableAll = (element) => {
-  const inputs = element.querySelectorAll("input");
-  const buttons = element.querySelectorAll("button");
-
-  inputs.forEach((input) => {
-    input.disabled = false;
-  });
-
-  buttons.forEach((button) => {
-    button.classList.remove("cursor-not-allowed");
-  });
-};
-
 const showAge = (age) => {
-  const box = document.querySelector(".box");
-  const ageContainer = box.querySelector(".age");
+  const element = document.querySelector("span");
 
-  ageContainer.textContent = `${age} anos`;
-  box.classList.replace("hidden", "block");
-};
-
-const hiddenAge = () => {
-  const box = document.querySelector(".box");
-
-  box.classList.replace("block", "hidden");
+  element.textContent = `${age} anos.`;
 };
 
 form.addEventListener("submit", function (event) {
@@ -74,10 +39,4 @@ form.addEventListener("submit", function (event) {
   const age = calculateAge(birthday);
 
   showAge(age);
-  disableAll(this);
-});
-
-okButton.addEventListener("click", () => {
-  hiddenAge();
-  enableAll(form);
 });
